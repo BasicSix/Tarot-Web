@@ -1,26 +1,25 @@
-# Tarot-Web
+# Tarot-Web · 塔罗占卜（纯静态单文件版）
 
-你的塔罗牌占卜🔮小助手
+你的塔罗牌占卜 🔮 小助手 —— 纯静态单文件实现，无需构建、无后端、无密钥。
 
-## 介绍
+## 部署
 
-塔罗牌占卜作为一种深受人们喜爱的心理探索工具，已经成为许多人自我反思与探索人生的方式之一。Tarot-Web是一款基于Web的塔罗牌占卜应用，它提供了22种不同的塔罗牌，每一张卡片都融合了传统塔罗的象征意义与AI的独特解读能力。
+整个项目就是一个 `index.html`，任意静态托管直接可用：
 
-### 页面截图
+- **Cloudflare Pages**：框架预设 None、构建命令留空、构建输出目录填 `/`
+- 或者直接把文件拖进任意静态主机
 
-![【开源】Tarot-塔罗牌占卜Tarot-Web](https://i0.wp.com/uxiaohan.github.io/v2/2024/12/1733449968.webp)
+## 功能
 
-## 如何部署
+- 22 张大阿尔卡那（韦特体系），正/逆位双份中文释义全部内置
+- 三种牌阵：单张指引 / 三张（过去·现在·未来）/ 五张（现状·障碍·助力·建议·结果）
+- CSS 3D 翻牌与洗牌动画，移动端适配
+- 纯本地抽牌（Fisher-Yates 洗牌 + 30% 逆位概率），不上传任何数据
+- 📷 一键保存占卜结果为高清 PNG（Canvas 手绘，1800px 宽）
+- ✨ 可选 AI 深度解读：⚙ 填入自己的 OpenAI 兼容端点（存 localStorage，页面不内嵌任何密钥）
 
-- 1、准备一个 Cloudflare 账户
-- 2、Fork 本仓库，自由修改`App.vue`和`index.html`文件中的文案
-- 3、登录`Cloudflare Dashboard`打开`Workers 和 Pages`创建`Pages`
-- 4、`连接到Git`选择`Github`或`Gitlab`中你刚刚Fork的项目，点击开始设置
-- 5、只需要修改`框架预设`为`Vue`即可，点击保存并部署，即可部署成功并投入使用
+## 说明
 
-
-
-
-### 具体部署步骤详情
-
-https://www.vvhan.com/article/kaiyuan-tarot
+本仓库原为 [uxiaohan/Tarot-Web](https://github.com/uxiaohan/Tarot-Web) 的 fork（Vue + Pages Function 版）。
+原版解析接口依赖的第三方 LLM 中转已下线，导致线上持续 1101 报错，故于 2026-10-08 重写为纯静态单文件版。
+原 Vue 版完整历史保留在 git 历史中，可随时回溯。
